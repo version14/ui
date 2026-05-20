@@ -1,0 +1,122 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction" />
+
+# @version14/ui
+
+Version14's shared design system — a set of accessible, themeable UI primitives built on top of [Ark UI](https://ark-ui.com), [PandaCSS](https://panda-css.com), and [Solar Icons](https://www.npmjs.com/package/@solar-icons/react).
+
+---
+
+## Installation
+
+```bash
+pnpm add @version14/ui @solar-icons/react
+pnpm add -D @pandacss/dev
+```
+
+---
+
+## 1 — Configure PandaCSS
+
+Add the `@version14/ui` preset to your `panda.config.ts`. This injects all design tokens (colors, typography, spacing, radii, shadows, z-index, breakpoints) and the dark-mode condition into your project.
+
+```ts
+// panda.config.ts
+import { defineConfig } from '@pandacss/dev';
+import uiPreset from '@version14/ui/preset';
+
+export default defineConfig({
+  preflight: true,
+  presets: [uiPreset],
+  include: ['./src/**/*.{ts,tsx}'],
+  darkMode: { condition: '_dark', selector: '.dark' },
+  outdir: 'styled-system',
+  jsxFramework: 'react',
+});
+```
+
+Then run codegen:
+
+```bash
+pnpm panda codegen
+```
+
+Import the generated CSS in your app entry point:
+
+```ts
+// app/layout.tsx (Next.js) or main.tsx (Vite)
+import '../styled-system/styles.css';
+```
+
+---
+
+## 2 — Wrap your app with ThemeProvider
+
+`ThemeProvider` reads the system preference on mount, persists manual choices to `localStorage`, and toggles `.dark` on `<html>` so PandaCSS semantic tokens activate.
+
+```tsx
+// app/layout.tsx (Next.js App Router)
+import { ThemeProvider } from '@version14/ui';
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
+    </html>
+  );
+}
+```
+
+Use the `useTheme` hook anywhere inside the tree:
+
+```tsx
+import { useTheme } from '@version14/ui';
+
+function ThemeToggle() {
+  const { theme, toggleTheme } = useTheme();
+  return <button onClick={toggleTheme}>Switch to {theme === 'light' ? 'dark' : 'light'}</button>;
+}
+```
+
+---
+
+## 3 — Install Solar Icons (peer dependency)
+
+`@solar-icons/react` is a peer dependency — install it directly in your app so you control which icon styles are bundled.
+
+```bash
+pnpm add @solar-icons/react
+```
+
+The `Icon` component accepts any Solar icon name with four style variants:
+
+```tsx
+import { Icon } from '@version14/ui';
+
+<Icon name="Home" size="md" variant="linear" />
+<Icon name="Star" size="lg" variant="bold" />
+```
+
+---
+
+## 4 — Use components
+
+All components accept a `className` prop for additional overrides via PandaCSS utilities.
+
+```tsx
+import { Button, Badge, Card, Heading, Text } from '@version14/ui';
+
+function Example() {
+  return (
+    <Card padding="md">
+      <Heading as="h2" size="xl">Hello world</Heading>
+      <Text muted>Subtitle copy goes here.</Text>
+      <Badge variant="solid">New</Badge>
+      <Button variant="primary" size="md">Get started</Button>
+    </Card>
+  );
+}
+```
