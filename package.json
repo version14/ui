@@ -43,6 +43,7 @@
   },
   "peerDependencies": {
     "@pandacss/dev": ">=0.45",
+    "@solar-icons/react": ">=1.1",
     "react": ">=18",
     "react-dom": ">=18"
   },
