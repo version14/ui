@@ -13,6 +13,7 @@ __pycache__/
 
 # ── Build outputs ────────────────────────────────────────
 dist/
+styled-system/
 build/
 out/
 target/
