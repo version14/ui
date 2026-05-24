@@ -1,6 +1,6 @@
 # Component Architecture
 
-How components in `@v14/ui` are structured and why.
+How components in `@version14/ui` are structured and why.
 
 ---
 

@@ -1,12 +1,12 @@
 # Context
 
-Domain glossary for `@v14/ui`. This file defines the canonical terms used across code, docs, and reviews.
+Domain glossary for `@version14/ui`. This file defines the canonical terms used across code, docs, and reviews.
 
 ---
 
 ## Glossary
 
-**Component** — a React component exported from `@v14/ui` that wraps one or more Ark UI Primitives and applies a PandaCSS Recipe for styling. Components are the only public-facing artifact of this library.
+**Component** — a React component exported from `@version14/ui` that wraps one or more Ark UI Primitives and applies a PandaCSS Recipe for styling. Components are the only public-facing artifact of this library.
 
 **Primitive** — an unstyled, accessible Ark UI component that provides behavior, keyboard interaction, and ARIA attributes. Primitives are implementation details; they are never exported directly.
 

@@ -1,6 +1,6 @@
 # Getting Started
 
-This guide walks you through setting up `@v14/ui` locally for component development.
+This guide walks you through setting up `@version14/ui` locally for component development.
 
 ---
 

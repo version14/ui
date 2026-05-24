@@ -1,4 +1,4 @@
-# @v14/ui
+# @version14/ui
 
 [![CI](https://github.com/v14/ui/actions/workflows/ci.yml/badge.svg)](https://github.com/v14/ui/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -20,7 +20,7 @@ V14's internal React component library — accessible, headless primitives from 
 
 ## Overview
 
-`@v14/ui` provides a curated set of React components used across V14 products. Components are built on top of Ark UI for accessibility and behavior, styled through PandaCSS recipes for full design-token integration.
+`@version14/ui` provides a curated set of React components used across V14 products. Components are built on top of Ark UI for accessibility and behavior, styled through PandaCSS recipes for full design-token integration.
 
 **Key properties:**
 

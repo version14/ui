@@ -7,7 +7,7 @@
 
 ## Context
 
-`@v14/ui` needs a component foundation that is:
+`@version14/ui` needs a component foundation that is:
 
 1. **Accessible** — ARIA patterns, keyboard navigation, and focus management handled out of the box
 2. **Unstyled** — full design control without fighting library-owned CSS

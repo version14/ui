@@ -1,6 +1,6 @@
 # FAQ
 
-Frequently asked questions for contributors to `@v14/ui`.
+Frequently asked questions for contributors to `@version14/ui`.
 
 ---
 
