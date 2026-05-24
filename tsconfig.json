@@ -25,11 +25,12 @@
     "verbatimModuleSyntax": true,
     "ignoreDeprecations": "5.0",
 
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
     "paths": {
       "@/*": ["./src/*"],
       "@styled-system/*": ["./src/styled-system/*"]
     }
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist", "**/*.stories.tsx", "**/*.test.tsx", "**/*.test.ts"]
+  "exclude": ["node_modules", "dist", "**/*.stories.tsx"]
 }
