@@ -1,17 +1,15 @@
 # Getting Started
 
-This guide walks you through setting up the project locally for development.
+This guide walks you through setting up `@v14/ui` locally for component development.
 
 ---
 
 ## Prerequisites
 
-<!-- List the tools required to run this project and link to their installation pages. -->
-
 | Tool | Version | Install |
 |------|---------|---------|
-| <!-- e.g. Node --> | <!-- e.g. >= 22.x --> | <!-- link --> |
-| <!-- e.g. Docker --> | <!-- e.g. >= 27.x --> | <!-- link --> |
+| Node | >= 20 | [nodejs.org](https://nodejs.org) |
+| pnpm | >= 10 | `npm i -g pnpm` |
 
 ---
 
@@ -20,8 +18,8 @@ This guide walks you through setting up the project locally for development.
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-org/your-repo.git
-   cd your-repo
+   git clone https://github.com/v14/ui.git
+   cd ui
    ```
 
 2. **Activate the commit-msg hook** (one-time, after cloning)
@@ -30,62 +28,112 @@ This guide walks you through setting up the project locally for development.
    git config core.hooksPath .githooks
    ```
 
-3. **Copy the environment file**
+   This enforces [Conventional Commits](https://www.conventionalcommits.org/) on every commit.
+
+3. **Install dependencies**
 
    ```bash
-   cp .env.example .env
+   pnpm install
    ```
 
-   Open `.env` and fill in the required values. See [Environment Variables](#environment-variables) below.
+   This also runs `panda codegen` (via the `prepare` script) to generate `src/styled-system/`.
 
-4. **Install dependencies**
+4. **Start Storybook**
 
    ```bash
-   # Replace with your package manager / build tool
-   # e.g. npm install / pip install -r requirements.txt / go mod download / mvn install
+   pnpm storybook
    ```
 
-5. **Start the development server**
-
-   ```bash
-   # Replace with your start command
-   # e.g. npm run dev / python manage.py runserver / go run ./cmd/server
-   ```
-
----
-
-## Environment Variables
-
-<!-- Document every variable in .env.example here. -->
-
-| Variable | Required | Default | Description |
-|----------|----------|---------|-------------|
-| `PORT`   | No       | `3000`  | Port the server listens on |
-| <!-- add rows --> | | | |
+   Open [http://localhost:6006](http://localhost:6006).
 
 ---
 
 ## Common Commands
 
-<!-- Replace with your actual commands. -->
-
 ```bash
-# Start development server
-# Run tests
-# Run linter
-# Build for production
+# Generate PandaCSS utilities (run after editing panda.config.mjs)
+pnpm prepare
+
+# Start Storybook
+pnpm storybook
+
+# Type-check
+pnpm check-types
+
+# Run tests (single pass)
+pnpm test
+
+# Run tests in watch mode
+pnpm test:watch
+
+# Run tests with coverage report
+pnpm test:coverage
+
+# Build the library for publishing
+pnpm build
 ```
+
+---
+
+## Path Aliases
+
+Two aliases are configured across TypeScript, Vite, and Vitest:
+
+| Alias | Resolves to | Use for |
+|-------|-------------|---------|
+| `@/*` | `src/*` | All internal imports |
+| `@styled-system/*` | `src/styled-system/*` | PandaCSS utilities (`css`, `cva`, `sva`) |
+
+Example:
+
+```ts
+import { css } from "@styled-system/css";
+import { MyButton } from "@/components/Button";
+```
+
+---
+
+## Adding a Component
+
+1. Create a folder under `src/components/`:
+
+   ```
+   src/components/Button/
+   ├── Button.tsx
+   ├── Button.test.tsx
+   ├── Button.stories.tsx
+   └── index.ts
+   ```
+
+2. Export from the folder's `index.ts`:
+
+   ```ts
+   export { Button } from "./Button";
+   export type { ButtonProps } from "./Button";
+   ```
+
+3. Re-export from `src/components/index.ts`:
+
+   ```ts
+   export * from "./Button";
+   ```
+
+The component is now part of the public API via `src/index.ts`.
 
 ---
 
 ## Troubleshooting
 
-**Port already in use**
+**`src/styled-system` is empty or missing**
 
-Find and stop the process occupying the port before starting the server.
+Run `pnpm prepare` to regenerate it.
 
-**Dependencies not installing**
+**Path alias not resolving in IDE**
 
-Make sure your runtime version matches the one listed in [Prerequisites](#prerequisites). Delete any lock files and retry a fresh install.
+Make sure your IDE uses the project's TypeScript version (not a global one). In VS Code: `TypeScript: Select TypeScript Version` → `Use Workspace Version`.
 
-For other issues, check the [FAQ](../developer-guide/faq.md) or open a [Discussion](../../../discussions).
+**Storybook cannot find a component**
+
+Confirm the story file ends in `.stories.tsx` — only that extension is picked up.
+
+For other issues, see the [FAQ](../developer-guide/faq.md) or open a Discussion.

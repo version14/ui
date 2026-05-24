@@ -1,11 +1,9 @@
-# Project Name
+# @v14/ui
 
-<!-- Replace the title above, fill in each section, and delete these comments when done. -->
-
-[![CI](https://github.com/your-org/your-repo/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/your-repo/actions/workflows/ci.yml)
+[![CI](https://github.com/v14/ui/actions/workflows/ci.yml/badge.svg)](https://github.com/v14/ui/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-One-paragraph description of what this project does and who it is for.
+V14's internal React component library — accessible, headless primitives from [Ark UI](https://ark-ui.com) styled with [PandaCSS](https://panda-css.com).
 
 ---
 
@@ -22,7 +20,14 @@ One-paragraph description of what this project does and who it is for.
 
 ## Overview
 
-Describe the problem this project solves, its main features, and any key design decisions worth highlighting upfront.
+`@v14/ui` provides a curated set of React components used across V14 products. Components are built on top of Ark UI for accessibility and behavior, styled through PandaCSS recipes for full design-token integration.
+
+**Key properties:**
+
+- Fully typed — strict TypeScript throughout
+- Accessible — ARIA compliance via Ark UI primitives
+- Themeable — all visual variants are PandaCSS `sva()` recipes
+- Tree-shakeable — dual ESM/CJS build, `sideEffects: false`
 
 ---
 
@@ -30,61 +35,81 @@ Describe the problem this project solves, its main features, and any key design 
 
 ### Prerequisites
 
-<!-- List the tools and versions required to run this project. -->
-
 | Tool | Version | Install |
 |------|---------|---------|
-| <!-- e.g. Node, Python, Go, Java --> | <!-- e.g. >= 22.x --> | <!-- link --> |
+| Node | >= 20 | [nodejs.org](https://nodejs.org) |
+| pnpm | >= 10 | `npm i -g pnpm` |
 
 ### Installation
 
 ```bash
-git clone https://github.com/your-org/your-repo.git
-cd your-repo
+git clone https://github.com/v14/ui.git
+cd ui
 
-# Activate the commit-msg hook (optional but recommended)
 git config core.hooksPath .githooks
 
-# Copy and fill in environment variables
-cp .env.example .env
-
-# Install dependencies (replace with your package manager)
-# e.g. npm install / pip install -r requirements.txt / go mod download
+pnpm install
 ```
 
-See [docs/getting-started](docs/getting-started/README.md) for the full setup guide.
+See [docs/getting-started/README.md](docs/getting-started/README.md) for the full setup guide.
 
 ---
 
 ## Development
 
 ```bash
-# Start development server
-# Run tests
-# Lint / format
-# Build for production
-```
+# Generate PandaCSS styled-system
+pnpm prepare
 
-<!-- Replace the comments above with your project's actual commands. -->
+# Start Storybook (component explorer)
+pnpm storybook
+
+# Type-check without emitting
+pnpm check-types
+
+# Run tests
+pnpm test
+
+# Run tests in watch mode
+pnpm test:watch
+
+# Build the library
+pnpm build
+```
 
 ---
 
 ## Architecture
 
-Brief description of the high-level structure. Link to detailed docs if available.
-
 ```
 .
-├── src/           # Source code
-├── docs/          # Documentation
-└── .github/       # GitHub configuration
+├── src/
+│   ├── components/        # UI components (one folder per component)
+│   ├── styled-system/     # PandaCSS generated output — do not edit
+│   ├── test/              # Vitest setup and shared test utilities
+│   ├── global.css         # PandaCSS layer declarations
+│   └── index.ts           # Public API barrel export
+├── .storybook/            # Storybook configuration
+├── docs/                  # Developer documentation
+├── tsconfig.json          # TypeScript — strict mode + path aliases
+├── tsup.config.ts         # Library build (dual ESM + CJS)
+├── vite.config.ts         # Vite for Storybook
+├── vitest.config.ts       # Test runner
+└── panda.config.mjs       # PandaCSS configuration
 ```
+
+Path aliases available everywhere (IDE, build, tests, Storybook):
+
+| Alias | Resolves to |
+|-------|-------------|
+| `@/*` | `src/*` |
+| `@styled-system/*` | `src/styled-system/*` |
 
 ---
 
 ## Contributing
 
-Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
 
 ---
 

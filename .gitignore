@@ -50,3 +50,9 @@ Thumbs.db
 tmp/
 temp/
 .cache/
+
+## Panda — do NOT ignore src/styled-system (it is committed)
+styled-system-studio
+
+# ── Storybook ─────────────────────────────────────────────
+storybook-static/

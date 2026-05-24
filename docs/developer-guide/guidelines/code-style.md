@@ -1,95 +1,135 @@
 # Code Style Guide
 
-<!-- Replace this file with your project's actual conventions. The sections below are a starting point. -->
-
-This document defines the code style and formatting conventions for this project. Consistency matters more than any individual rule — when in doubt, follow existing patterns in the codebase.
+Consistency matters more than any individual rule. When in doubt, follow existing patterns.
 
 ---
 
 ## Tooling
 
-<!-- Describe the linter / formatter used and how to run them. -->
-
 ```bash
-# Check for style errors
-# Auto-fix formatting
+# Type-check the entire project
+pnpm check-types 
+
+# Run all tests
+pnpm test
 ```
 
-All checks must pass before a PR can be merged. The CI pipeline enforces this automatically.
+Both must pass before pushing. CI enforces this automatically.
 
 ---
 
-## General Principles
+## TypeScript
 
-- **Clarity over cleverness** — write code for the next reader, not the compiler
-- **Explicit over implicit** — avoid magic; name things for what they do
-- **Small functions** — each function should do one thing
-- **No dead code** — remove commented-out code before committing
+- **Always write explicit return types** on exported functions and components.
+- **Never use `any`.** Use `unknown` and narrow it, or `never` for exhaustive checks.
+- **Prefer `interface` for component props**, `type` for unions and mapped types.
+- **Use `import type`** for type-only imports (`import type { FC } from "react"`).
+- `exactOptionalPropertyTypes` is on — do not assign `undefined` to an optional prop to "unset" it; simply omit it.
 
 ---
 
 ## Naming Conventions
 
-<!-- Adapt the table below to your language and framework. -->
-
 | Element | Convention | Example |
 |---------|------------|---------|
-| Files | `kebab-case` | `user-service.ts` |
-| Classes | `PascalCase` | `UserService` |
-| Functions / methods | `camelCase` | `getUserById` |
-| Constants | `UPPER_SNAKE_CASE` | `MAX_RETRY_COUNT` |
-| Private members | `_prefixed` or language convention | `_cache` |
+| Files | `PascalCase` for components, `camelCase` for utilities | `Button.tsx`, `mergeRefs.ts` |
+| Component | `PascalCase` | `IconButton` |
+| Props interface | `ComponentNameProps` | `IconButtonProps` |
+| Hooks | `useCamelCase` | `useControllableState` |
+| PandaCSS recipe | `componentNameRecipe` | `buttonRecipe` |
+| Constants | `UPPER_SNAKE_CASE` | `DEFAULT_TRANSITION` |
+
+---
+
+## Component Structure
+
+Every component lives in its own folder:
+
+```
+src/components/Button/
+├── Button.tsx          ← implementation
+├── Button.test.tsx     ← unit + a11y tests
+├── Button.stories.tsx  ← Storybook stories
+└── index.ts            ← public re-export
+```
+
+Component file order:
+
+1. Imports
+2. Types / interfaces
+3. PandaCSS recipe (`sva()` / `cva()`)
+4. Component function
+5. `displayName` assignment
+6. Named export
+
+---
+
+## PandaCSS Conventions
+
+- Use `sva()` for multi-slot components, `cva()` for single-root ones.
+- Co-locate the recipe with the component — do not create a separate `recipes/` folder.
+- Name recipe slots after their semantic role, not their HTML element: `root`, `label`, `icon`, `indicator`.
+- Only expose variants that consumers actually need. Internals that never vary are not variants.
+
+```ts
+const buttonRecipe = sva({
+  slots: ["root", "icon"],
+  base: {
+    root: { display: "inline-flex", alignItems: "center" },
+    icon: { flexShrink: 0 },
+  },
+  variants: {
+    size: {
+      sm: { root: { px: "3", h: "8" } },
+      md: { root: { px: "4", h: "10" } },
+    },
+    intent: {
+      primary: { root: { bg: "blue.500", color: "white" } },
+      secondary: { root: { bg: "gray.100", color: "gray.900" } },
+    },
+  },
+  defaultVariants: { size: "md", intent: "primary" },
+});
+```
+
+---
+
+## Imports
+
+Order, separated by blank lines:
+
+1. React and built-ins
+2. Third-party packages (`@ark-ui/react`, etc.)
+3. Internal via `@/` alias
+4. Internal via `@styled-system/` alias
+5. Relative imports
 
 ---
 
 ## Formatting
 
-<!-- Describe spacing, indentation, line length, quotes, etc. -->
-
-- **Indentation**: X spaces (no tabs)
+- **Indentation**: 2 spaces
 - **Max line length**: 100 characters
-- **Trailing commas**: yes / no
-- **Quotes**: single / double
-
----
-
-## Import / Dependency Order
-
-<!-- Describe how imports should be ordered. Example for languages with explicit imports: -->
-
-1. Standard library / built-ins
-2. Third-party packages
-3. Internal packages / modules
-4. Relative imports
-
-Separate each group with a blank line.
+- **Quotes**: double
+- **Trailing commas**: all
+- **Semicolons**: yes
 
 ---
 
 ## Error Handling
 
-- Never swallow errors silently — log or propagate
-- Use typed/structured errors where the language supports it
-- Validate inputs at system boundaries; trust internal code
-
----
-
-## Testing Conventions
-
-- Tests live next to the code they test, or in a dedicated `tests/` directory
-- Each test should be independent and not rely on shared mutable state
-- Test names should describe the expected behavior: `should return 404 when user not found`
+- Never swallow errors silently.
+- Validate at component boundaries (prop types), not inside helpers.
+- Prefer descriptive thrown errors over returning `null` in utilities.
 
 ---
 
 ## Running the Full Validation Suite
 
 ```bash
-# Replace with your actual commands
-# Lint
-# Type-check (if applicable)
-# Tests
-# Build
+pnpm check-types   # TypeScript
+pnpm test        # Vitest
+pnpm build       # tsup (catches tree-shaking / export issues)
 ```
 
-All four must pass before pushing.
+All three must pass before pushing.
