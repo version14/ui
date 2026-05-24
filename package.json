@@ -24,6 +24,10 @@
     "dist"
   ],
   "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/version14/ui"
+  },
   "publishConfig": {
     "access": "public"
   },
