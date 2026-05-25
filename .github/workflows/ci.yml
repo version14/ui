@@ -1,11 +1,5 @@
 name: CI
 
-# ──────────────────────────────────────────────────────────────────────────────
-# TEMPLATE — adapt this workflow to your tech stack before committing.
-# Replace the placeholder steps below with your actual install/lint/test/build
-# commands. Remove this comment block when done.
-# ──────────────────────────────────────────────────────────────────────────────
-
 on:
   push:
     branches: [main]
@@ -21,53 +15,65 @@ jobs:
     name: Lint & type-check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
 
-      # ── Install runtime ────────────────────────────────
-      # Replace or extend with your language setup action.
-      # Examples:
-      #   Node:   actions/setup-node@v4
-      #   Python: actions/setup-python@v5
-      #   Go:     actions/setup-go@v5
-      #   Java:   actions/setup-java@v4
-      - name: Set up runtime
-        run: echo "Replace this step with your runtime setup"
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
 
-      # ── Install dependencies ───────────────────────────
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
       - name: Install dependencies
-        run: echo "Replace with -> npm ci / pip install / go mod download / ..."
+        run: pnpm install --frozen-lockfile
 
-      # ── Lint ───────────────────────────────────────────
       - name: Lint
-        run: echo "Replace with your lint command"
+        run: pnpm lint
+
+      - name: Type-check
+        run: pnpm check-types
 
   test:
     name: Tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
 
-      - name: Set up runtime
-        run: echo "Replace this step with your runtime setup"
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
 
       - name: Install dependencies
-        run: echo "Replace with your install command"
+        run: pnpm install --frozen-lockfile
 
       - name: Run tests
-        run: echo "Replace with your test command"
+        run: pnpm test
 
   build:
     name: Build
     runs-on: ubuntu-latest
     needs: [lint, test]
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
 
-      - name: Set up runtime
-        run: echo "Replace this step with your runtime setup"
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
 
       - name: Install dependencies
-        run: echo "Replace with your install command"
+        run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: echo "Replace with your build command"
+        run: pnpm build
