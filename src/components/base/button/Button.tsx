@@ -1,5 +1,5 @@
-import { ark } from "@ark-ui/react";
 import type { HTMLArkProps } from "@ark-ui/react";
+import { ark } from "@ark-ui/react";
 import { sva } from "@styled-system/css";
 
 const buttonRecipe = sva({
@@ -46,11 +46,6 @@ export interface ButtonProps extends HTMLArkProps<"button"> {
 
 export function Button({ size, intent, className, ...props }: ButtonProps): React.JSX.Element {
   const classes = buttonRecipe({ size, intent });
-  return (
-    <ark.button
-      className={[classes.root, className].filter(Boolean).join(" ")}
-      {...props}
-    />
-  );
+  return <ark.button className={[classes.root, className].filter(Boolean).join(" ")} {...props} />;
 }
 Button.displayName = "Button";

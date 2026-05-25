@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { Button } from "./Button";
 import { expect, test, vi } from "vitest";
+import { Button } from "./Button";
 
 test("renders with correct text", () => {
   render(<Button>Click me</Button>);
@@ -31,7 +31,11 @@ test("renders as disabled", () => {
 test("does not fire onClick when disabled", async () => {
   const user = userEvent.setup();
   const onClick = vi.fn();
-  render(<Button disabled onClick={onClick}>Click me</Button>);
+  render(
+    <Button disabled onClick={onClick}>
+      Click me
+    </Button>,
+  );
   await user.click(screen.getByRole("button"));
   expect(onClick).not.toHaveBeenCalled();
 });
