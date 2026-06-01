@@ -4,7 +4,6 @@ import type { CssProperties } from './system-types';
 import type { Tokens } from '../tokens/index';
 
 export interface UtilityValues {
-	aspectRatio: Tokens["aspectRatios"];
 	top: Tokens["spacing"];
 	left: Tokens["spacing"];
 	inset: "auto" | Tokens["spacing"];
@@ -17,9 +16,7 @@ export interface UtilityValues {
 	right: Tokens["spacing"];
 	bottom: Tokens["spacing"];
 	float: "start" | "end" | CssProperties["float"];
-	hideFrom: Tokens["breakpoints"];
-	hideBelow: Tokens["breakpoints"];
-	flexBasis: Tokens["sizes"] | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "full";
+	flexBasis: "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "full";
 	flex: "1" | "auto" | "initial" | "none";
 	gridAutoColumns: "min" | "max" | "fr";
 	gridAutoRows: "min" | "max" | "fr";
@@ -54,7 +51,6 @@ export interface UtilityValues {
 	spaceX: "auto" | Tokens["spacing"] | CssProperties["marginInlineStart"];
 	spaceY: "auto" | Tokens["spacing"] | CssProperties["marginBlockStart"];
 	outlineColor: Tokens["colors"];
-	outline: Tokens["borders"];
 	outlineOffset: Tokens["spacing"];
 	focusRing: "outside" | "inside" | "mixed" | "none";
 	focusVisibleRing: "outside" | "inside" | "mixed" | "none";
@@ -64,23 +60,22 @@ export interface UtilityValues {
 	focusRingStyle: CssProperties["outlineStyle"];
 	divideColor: Tokens["colors"];
 	divideStyle: CssProperties["borderStyle"];
-	width: "auto" | Tokens["sizes"] | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "screen";
-	inlineSize: "auto" | Tokens["sizes"] | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "screen";
-	minWidth: "auto" | Tokens["sizes"] | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "screen";
-	minInlineSize: "auto" | Tokens["sizes"] | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "screen";
-	maxWidth: "auto" | Tokens["sizes"] | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "screen";
-	maxInlineSize: "auto" | Tokens["sizes"] | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "screen";
-	height: "auto" | Tokens["sizes"] | "svh" | "lvh" | "dvh" | "screen" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6";
-	blockSize: "auto" | Tokens["sizes"] | "svh" | "lvh" | "dvh" | "screen" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6";
-	minHeight: "auto" | Tokens["sizes"] | "svh" | "lvh" | "dvh" | "screen" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6";
-	minBlockSize: "auto" | Tokens["sizes"] | "svh" | "lvh" | "dvh" | "screen" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6";
-	maxHeight: "auto" | Tokens["sizes"] | "svh" | "lvh" | "dvh" | "screen" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6";
-	maxBlockSize: "auto" | Tokens["sizes"] | "svh" | "lvh" | "dvh" | "screen" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6";
-	boxSize: "auto" | Tokens["sizes"] | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "screen";
+	width: "auto" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "screen";
+	inlineSize: "auto" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "screen";
+	minWidth: "auto" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "screen";
+	minInlineSize: "auto" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "screen";
+	maxWidth: "auto" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "screen";
+	maxInlineSize: "auto" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "screen";
+	height: "auto" | "svh" | "lvh" | "dvh" | "screen" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6";
+	blockSize: "auto" | "svh" | "lvh" | "dvh" | "screen" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6";
+	minHeight: "auto" | "svh" | "lvh" | "dvh" | "screen" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6";
+	minBlockSize: "auto" | "svh" | "lvh" | "dvh" | "screen" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6";
+	maxHeight: "auto" | "svh" | "lvh" | "dvh" | "screen" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6";
+	maxBlockSize: "auto" | "svh" | "lvh" | "dvh" | "screen" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6";
+	boxSize: "auto" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "screen";
 	color: Tokens["colors"];
 	fontFamily: Tokens["fonts"];
 	fontSize: Tokens["fontSizes"];
-	fontWeight: Tokens["fontWeights"];
 	fontSmoothing: "antialiased" | "subpixel-antialiased";
 	letterSpacing: Tokens["letterSpacings"];
 	lineHeight: Tokens["lineHeights"];
@@ -115,34 +110,21 @@ export interface UtilityValues {
 	borderEndStartRadius: Tokens["radii"];
 	borderEndEndRadius: Tokens["radii"];
 	borderEndRadius: Tokens["radii"] | CssProperties["borderRadius"];
-	border: Tokens["borders"];
 	borderColor: Tokens["colors"];
-	borderInline: Tokens["borders"];
 	borderInlineColor: Tokens["colors"];
-	borderBlock: Tokens["borders"];
 	borderBlockColor: Tokens["colors"];
-	borderLeft: Tokens["borders"];
 	borderLeftColor: Tokens["colors"];
-	borderInlineStart: Tokens["borders"];
 	borderInlineStartColor: Tokens["colors"];
-	borderRight: Tokens["borders"];
 	borderRightColor: Tokens["colors"];
-	borderInlineEnd: Tokens["borders"];
 	borderInlineEndColor: Tokens["colors"];
-	borderTop: Tokens["borders"];
 	borderTopColor: Tokens["colors"];
-	borderBottom: Tokens["borders"];
 	borderBottomColor: Tokens["colors"];
-	borderBlockEnd: Tokens["borders"];
 	borderBlockEndColor: Tokens["colors"];
-	borderBlockStart: Tokens["borders"];
 	borderBlockStartColor: Tokens["colors"];
 	boxShadow: Tokens["shadows"];
 	boxShadowColor: Tokens["colors"];
 	filter: "auto";
-	blur: Tokens["blurs"];
 	backdropFilter: "auto";
-	backdropBlur: Tokens["blurs"];
 	borderSpacing: Tokens["spacing"] | "auto";
 	borderSpacingX: Tokens["spacing"];
 	borderSpacingY: Tokens["spacing"];
@@ -151,8 +133,7 @@ export interface UtilityValues {
 	transitionDuration: Tokens["durations"];
 	transitionProperty: "common" | "colors" | "size" | "position" | "background";
 	transition: "all" | "common" | "size" | "position" | "background" | "colors" | "opacity" | "shadow" | "transform";
-	animation: Tokens["animations"];
-	animationName: "spin" | "ping" | "pulse" | "bounce";
+	animationName: "shimmer" | "fade-in" | "expand-down" | "collapse-up" | "slide-up" | "slide-in-right" | "slide-in-left" | "slide-in-bottom" | "slide-in-top" | "slide-down" | "popover-in" | "popover-out" | "tooltip-in" | "tooltip-out";
 	animationTimingFunction: Tokens["easings"];
 	animationDuration: Tokens["durations"];
 	animationDelay: Tokens["durations"];
@@ -169,7 +150,6 @@ export interface UtilityValues {
 	caretColor: Tokens["colors"];
 	scrollbar: "visible" | "hidden";
 	scrollbarColor: Tokens["colors"];
-	scrollbarWidth: Tokens["sizes"];
 	scrollMargin: Tokens["spacing"];
 	scrollMarginLeft: Tokens["spacing"];
 	scrollMarginRight: Tokens["spacing"];
@@ -204,8 +184,7 @@ export interface UtilityValues {
 	srOnly: boolean;
 	debug: boolean;
 	containerName: CssProperties["containerName"];
-	colorPalette: "current" | "black" | "white" | "transparent" | "rose" | "pink" | "fuchsia" | "purple" | "violet" | "indigo" | "blue" | "sky" | "cyan" | "teal" | "emerald" | "green" | "lime" | "yellow" | "amber" | "orange" | "red" | "neutral" | "stone" | "zinc" | "gray" | "slate";
-	textStyle: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl";
+	colorPalette: "bg" | "bgSunken" | "surface" | "surface2" | "surface3" | "fg" | "fgMuted" | "fgSubtle" | "fgFaint" | "border" | "borderStrong" | "borderAccent" | "accent" | "accentHover" | "accentPress" | "accentInk" | "accentGlow" | "accentText" | "success" | "warning" | "danger" | "info" | "successBg" | "warningBg" | "dangerBg" | "infoBg" | "selection" | "dot" | "gridLine";
 }
 
 

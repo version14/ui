@@ -344,7 +344,7 @@ anchorScope?: ConditionalValue<CssProperties["anchorScope"] | AnyString>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation
    */
-animation?: ConditionalValue<UtilityValues["animation"] | CssVars | CssProperties["animation"] | AnyString>
+animation?: ConditionalValue<CssProperties["animation"] | AnyString>
  /**
    * Since July 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
    *
@@ -561,7 +561,7 @@ appearance?: ConditionalValue<CssVars | CssProperties["appearance"] | AnyString>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/aspect-ratio
    */
-aspectRatio?: ConditionalValue<UtilityValues["aspectRatio"] | CssVars | CssProperties["aspectRatio"] | AnyString>
+aspectRatio?: ConditionalValue<CssProperties["aspectRatio"] | AnyString>
  /**
    * Since September 2024, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
    *
@@ -786,7 +786,7 @@ blockSize?: ConditionalValue<UtilityValues["blockSize"] | CssVars | CssPropertie
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border
    */
-border?: ConditionalValue<UtilityValues["border"] | CssVars | CssProperties["border"] | AnyString>
+border?: ConditionalValue<CssProperties["border"] | AnyString>
  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
    *
@@ -798,7 +798,7 @@ border?: ConditionalValue<UtilityValues["border"] | CssVars | CssProperties["bor
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block
    */
-borderBlock?: ConditionalValue<UtilityValues["borderBlock"] | CssVars | CssProperties["borderBlock"] | AnyString>
+borderBlock?: ConditionalValue<CssProperties["borderBlock"] | AnyString>
  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
    *
@@ -824,7 +824,7 @@ borderBlockColor?: ConditionalValue<UtilityValues["borderBlockColor"] | CssVars 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-end
    */
-borderBlockEnd?: ConditionalValue<UtilityValues["borderBlockEnd"] | CssVars | CssProperties["borderBlockEnd"] | AnyString>
+borderBlockEnd?: ConditionalValue<CssProperties["borderBlockEnd"] | AnyString>
  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
    *
@@ -878,7 +878,7 @@ borderBlockEndWidth?: ConditionalValue<CssProperties["borderBlockEndWidth"] | An
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-start
    */
-borderBlockStart?: ConditionalValue<UtilityValues["borderBlockStart"] | CssVars | CssProperties["borderBlockStart"] | AnyString>
+borderBlockStart?: ConditionalValue<CssProperties["borderBlockStart"] | AnyString>
  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
    *
@@ -960,7 +960,7 @@ borderBlockWidth?: ConditionalValue<CssProperties["borderBlockWidth"] | AnyStrin
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-bottom
    */
-borderBottom?: ConditionalValue<UtilityValues["borderBottom"] | CssVars | CssProperties["borderBottom"] | AnyString>
+borderBottom?: ConditionalValue<CssProperties["borderBottom"] | AnyString>
  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
    *
@@ -1181,7 +1181,7 @@ borderImageWidth?: ConditionalValue<CssProperties["borderImageWidth"] | AnyStrin
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline
    */
-borderInline?: ConditionalValue<UtilityValues["borderInline"] | CssVars | CssProperties["borderInline"] | AnyString>
+borderInline?: ConditionalValue<CssProperties["borderInline"] | AnyString>
  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
    *
@@ -1207,7 +1207,7 @@ borderInlineColor?: ConditionalValue<UtilityValues["borderInlineColor"] | CssVar
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-end
    */
-borderInlineEnd?: ConditionalValue<UtilityValues["borderInlineEnd"] | CssVars | CssProperties["borderInlineEnd"] | AnyString>
+borderInlineEnd?: ConditionalValue<CssProperties["borderInlineEnd"] | AnyString>
  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
    *
@@ -1264,7 +1264,7 @@ borderInlineEndWidth?: ConditionalValue<CssProperties["borderInlineEndWidth"] | 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-start
    */
-borderInlineStart?: ConditionalValue<UtilityValues["borderInlineStart"] | CssVars | CssProperties["borderInlineStart"] | AnyString>
+borderInlineStart?: ConditionalValue<CssProperties["borderInlineStart"] | AnyString>
  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
    *
@@ -1348,7 +1348,7 @@ borderInlineWidth?: ConditionalValue<CssProperties["borderInlineWidth"] | AnyStr
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-left
    */
-borderLeft?: ConditionalValue<UtilityValues["borderLeft"] | CssVars | CssProperties["borderLeft"] | AnyString>
+borderLeft?: ConditionalValue<CssProperties["borderLeft"] | AnyString>
  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
    *
@@ -1415,7 +1415,7 @@ borderRadius?: ConditionalValue<UtilityValues["borderRadius"] | CssVars | CssPro
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-right
    */
-borderRight?: ConditionalValue<UtilityValues["borderRight"] | CssVars | CssProperties["borderRight"] | AnyString>
+borderRight?: ConditionalValue<CssProperties["borderRight"] | AnyString>
  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
    *
@@ -1523,7 +1523,7 @@ borderStyle?: ConditionalValue<CssProperties["borderStyle"] | AnyString>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-top
    */
-borderTop?: ConditionalValue<UtilityValues["borderTop"] | CssVars | CssProperties["borderTop"] | AnyString>
+borderTop?: ConditionalValue<CssProperties["borderTop"] | AnyString>
  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
    *
@@ -2875,7 +2875,7 @@ fontVariationSettings?: ConditionalValue<CssProperties["fontVariationSettings"] 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-weight
    */
-fontWeight?: ConditionalValue<UtilityValues["fontWeight"] | CssVars | CssProperties["fontWeight"] | AnyString>
+fontWeight?: ConditionalValue<CssProperties["fontWeight"] | AnyString>
  /**
    * This feature is not Baseline because it does not work in some of the most widely-used browsers.
    *
@@ -4377,7 +4377,7 @@ orphans?: ConditionalValue<CssProperties["orphans"] | AnyString>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/outline
    */
-outline?: ConditionalValue<UtilityValues["outline"] | CssVars | CssProperties["outline"] | AnyString>
+outline?: ConditionalValue<CssProperties["outline"] | AnyString>
  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
    *
@@ -5615,7 +5615,7 @@ scrollbarGutter?: ConditionalValue<CssProperties["scrollbarGutter"] | AnyString>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scrollbar-width
    */
-scrollbarWidth?: ConditionalValue<UtilityValues["scrollbarWidth"] | CssVars | CssProperties["scrollbarWidth"] | AnyString>
+scrollbarWidth?: ConditionalValue<CssProperties["scrollbarWidth"] | AnyString>
  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
    *
@@ -7308,7 +7308,7 @@ ringColor?: ConditionalValue<UtilityValues["outlineColor"] | CssVars | CssProper
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/outline
    */
-ring?: ConditionalValue<UtilityValues["outline"] | CssVars | CssProperties["outline"] | AnyString>
+ring?: ConditionalValue<CssProperties["outline"] | AnyString>
  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
    *
@@ -7726,7 +7726,7 @@ roundedEndEnd?: ConditionalValue<UtilityValues["borderEndEndRadius"] | CssVars |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline
    */
-borderX?: ConditionalValue<UtilityValues["borderInline"] | CssVars | CssProperties["borderInline"] | AnyString>
+borderX?: ConditionalValue<CssProperties["borderInline"] | AnyString>
  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
    *
@@ -7766,7 +7766,7 @@ borderXColor?: ConditionalValue<UtilityValues["borderInlineColor"] | CssVars | C
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block
    */
-borderY?: ConditionalValue<UtilityValues["borderBlock"] | CssVars | CssProperties["borderBlock"] | AnyString>
+borderY?: ConditionalValue<CssProperties["borderBlock"] | AnyString>
  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
    *
@@ -7806,7 +7806,7 @@ borderYColor?: ConditionalValue<UtilityValues["borderBlockColor"] | CssVars | Cs
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-start
    */
-borderStart?: ConditionalValue<UtilityValues["borderInlineStart"] | CssVars | CssProperties["borderInlineStart"] | AnyString>
+borderStart?: ConditionalValue<CssProperties["borderInlineStart"] | AnyString>
  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
    *
@@ -7847,7 +7847,7 @@ borderStartColor?: ConditionalValue<UtilityValues["borderInlineStartColor"] | Cs
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-end
    */
-borderEnd?: ConditionalValue<UtilityValues["borderInlineEnd"] | CssVars | CssProperties["borderInlineEnd"] | AnyString>
+borderEnd?: ConditionalValue<CssProperties["borderInlineEnd"] | AnyString>
  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
    *
@@ -7943,8 +7943,8 @@ scrollPaddingY?: ConditionalValue<UtilityValues["scrollPaddingBlock"] | CssVars 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-padding-inline
    */
 scrollPaddingX?: ConditionalValue<UtilityValues["scrollPaddingInline"] | CssVars | CssProperties["scrollPaddingInline"] | AnyString>
- hideFrom?: ConditionalValue<UtilityValues["hideFrom"] | CssVars | AnyString>
- hideBelow?: ConditionalValue<UtilityValues["hideBelow"] | CssVars | AnyString>
+ hideFrom?: ConditionalValue<string | number | AnyString>
+ hideBelow?: ConditionalValue<string | number | AnyString>
  spaceX?: ConditionalValue<UtilityValues["spaceX"] | CssVars | AnyString>
  spaceY?: ConditionalValue<UtilityValues["spaceY"] | CssVars | AnyString>
  focusRing?: ConditionalValue<UtilityValues["focusRing"] | CssVars | AnyString>
@@ -7986,8 +7986,8 @@ scrollPaddingX?: ConditionalValue<UtilityValues["scrollPaddingInline"] | CssVars
  saturate?: ConditionalValue<string | number | AnyString>
  sepia?: ConditionalValue<string | number | AnyString>
  dropShadow?: ConditionalValue<string | number | AnyString>
- blur?: ConditionalValue<UtilityValues["blur"] | CssVars | AnyString>
- backdropBlur?: ConditionalValue<UtilityValues["backdropBlur"] | CssVars | AnyString>
+ blur?: ConditionalValue<string | number | AnyString>
+ backdropBlur?: ConditionalValue<string | number | AnyString>
  backdropBrightness?: ConditionalValue<string | number | AnyString>
  backdropContrast?: ConditionalValue<string | number | AnyString>
  backdropGrayscale?: ConditionalValue<string | number | AnyString>
@@ -8085,5 +8085,4 @@ scrollSnapMarginRight?: ConditionalValue<UtilityValues["scrollSnapMarginRight"] 
  srOnly?: ConditionalValue<UtilityValues["srOnly"] | CssVars | AnyString>
  debug?: ConditionalValue<UtilityValues["debug"] | CssVars | AnyString>
  colorPalette?: ConditionalValue<UtilityValues["colorPalette"] | CssVars | AnyString>
- textStyle?: ConditionalValue<UtilityValues["textStyle"] | CssVars | AnyString>
 }
