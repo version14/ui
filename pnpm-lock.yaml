@@ -11,6 +11,9 @@ importers:
       gsap:
         specifier: ^3.15.0
         version: 3.15.0
+      pixelarticons:
+        specifier: ^2.1.2
+        version: 2.1.2(react@19.2.6)
     devDependencies:
       '@ark-ui/react':
         specifier: ^5.36.2
@@ -2788,6 +2791,12 @@ packages:
   pirates@4.0.7:
     resolution: {integrity: sha512-TfySrs/5nm8fQJDcBDuUng3VOUKsd7S+zqvbOTiGXHfxX4wK31ard+hoNuvkicM/2YFzlpDgABOevKSsB4G/FA==}
     engines: {node: '>= 6'}
+
+  pixelarticons@2.1.2:
+    resolution: {integrity: sha512-RnACjnR5UKm+ovmLKvdsF6DJOYD9JonXDqWOwtFiCStsJofCbShvsYnt4NCL5qPrmVHrB6h64X/qtNUep8GueQ==}
+    hasBin: true
+    peerDependencies:
+      react: '>=16'
 
   pkce-challenge@5.0.1:
     resolution: {integrity: sha512-wQ0b/W4Fr01qtpHlqSqspcj3EhBvimsdh0KlHhH8HRZnMsEa0ea2fTULOXOS9ccQr3om+GcGRk4e+isrZWV8qQ==}
@@ -6406,6 +6415,10 @@ snapshots:
   picomatch@4.0.4: {}
 
   pirates@4.0.7: {}
+
+  pixelarticons@2.1.2(react@19.2.6):
+    dependencies:
+      react: 19.2.6
 
   pkce-challenge@5.0.1: {}
 
