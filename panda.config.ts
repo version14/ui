@@ -7,4 +7,5 @@ export default defineConfig({
   exclude: [],
   presets: [v14Preset],
   outdir: "src/styled-system",
+  jsxFramework: "react",
 });

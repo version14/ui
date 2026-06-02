@@ -1,6 +1,6 @@
 {
   "name": "@version14/ui",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "V14 internal UI component library built on Ark UI and PandaCSS",
   "author": "V14",
   "license": "MIT",
@@ -118,6 +118,7 @@
   ],
   "dependencies": {
     "gsap": "^3.15.0",
-    "pixelarticons": "^2.1.2"
+    "pixelarticons": "^2.1.2",
+    "shiki": "^4.1.0"
   }
 }

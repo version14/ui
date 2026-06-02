@@ -21,6 +21,7 @@ export default defineConfig({
       "@styled-system/css": `${styledSystem}/css/index.mjs`,
       "@styled-system/patterns": `${styledSystem}/patterns/index.mjs`,
       "@styled-system/tokens": `${styledSystem}/tokens/index.mjs`,
+      "@styled-system/jsx": `${styledSystem}/jsx/index.mjs`,
       "@styled-system": styledSystem,
       "@": path.resolve(root, "src"),
     };
