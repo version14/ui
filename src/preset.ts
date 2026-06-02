@@ -115,6 +115,9 @@ export const v14Preset = definePreset({
           "3xl": { value: "37px" },
           "4xl": { value: "52px" },
           "5xl": { value: "72px" },
+          "display-sm": { value: "40px" },
+          "display-md": { value: "56px" },
+          "display-lg": { value: "80px" },
         },
         lineHeights: {
           tight: { value: "1.1" },

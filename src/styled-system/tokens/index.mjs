@@ -47,6 +47,18 @@ const tokens = {
     "value": "72px",
     "variable": "var(--font-sizes-5xl)"
   },
+  "fontSizes.display-sm": {
+    "value": "40px",
+    "variable": "var(--font-sizes-display-sm)"
+  },
+  "fontSizes.display-md": {
+    "value": "56px",
+    "variable": "var(--font-sizes-display-md)"
+  },
+  "fontSizes.display-lg": {
+    "value": "80px",
+    "variable": "var(--font-sizes-display-lg)"
+  },
   "lineHeights.tight": {
     "value": "1.1",
     "variable": "var(--line-heights-tight)"

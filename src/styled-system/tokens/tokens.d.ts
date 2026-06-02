@@ -5,7 +5,7 @@ export type ColorPalette = "bg" | "bgSunken" | "surface" | "surface2" | "surface
 
 export type FontToken = "sans" | "mono"
 
-export type FontSizeToken = "xs" | "sm" | "base" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl"
+export type FontSizeToken = "xs" | "sm" | "base" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "display-sm" | "display-md" | "display-lg"
 
 export type LineHeightToken = "tight" | "snug" | "base"
 
