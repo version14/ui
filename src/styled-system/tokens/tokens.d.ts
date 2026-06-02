@@ -3,7 +3,7 @@ export type Token = `fonts.${FontToken}` | `fontSizes.${FontSizeToken}` | `lineH
 
 export type ColorPalette = "bg" | "bgSunken" | "surface" | "surface2" | "surface3" | "fg" | "fgMuted" | "fgSubtle" | "fgFaint" | "border" | "borderStrong" | "borderAccent" | "accent" | "accentHover" | "accentPress" | "accentInk" | "accentGlow" | "accentText" | "success" | "warning" | "danger" | "info" | "successBg" | "warningBg" | "dangerBg" | "infoBg" | "selection" | "dot" | "gridLine"
 
-export type FontToken = "sans" | "mono"
+export type FontToken = "sans" | "mono" | "serif"
 
 export type FontSizeToken = "xs" | "sm" | "base" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "display-sm" | "display-md" | "display-lg"
 

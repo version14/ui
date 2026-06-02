@@ -103,6 +103,9 @@ export const v14Preset = definePreset({
           mono: {
             value: '"Geist Mono", ui-monospace, "SF Mono", Menlo, monospace',
           },
+          serif: {
+            value: '"Nyght Serif", Georgia, serif',
+          },
         },
         fontSizes: {
           xs: { value: "11px" },

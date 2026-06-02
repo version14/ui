@@ -305,6 +305,7 @@ export {
 
 
 
+// src/normalize-html.ts
 var htmlProps = ["htmlSize", "htmlTranslate", "htmlWidth", "htmlHeight"];
 function convert(key) {
   return htmlProps.includes(key) ? key.replace("html", "").toLowerCase() : key;

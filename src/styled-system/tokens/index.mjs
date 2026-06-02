@@ -7,6 +7,10 @@ const tokens = {
     "value": "\"Geist Mono\", ui-monospace, \"SF Mono\", Menlo, monospace",
     "variable": "var(--fonts-mono)"
   },
+  "fonts.serif": {
+    "value": "\"Nyght Serif\", Georgia, serif",
+    "variable": "var(--fonts-serif)"
+  },
   "fontSizes.xs": {
     "value": "11px",
     "variable": "var(--font-sizes-xs)"
