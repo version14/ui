@@ -137,3 +137,38 @@ Make sure your IDE uses the project's TypeScript version (not a global one). In 
 Confirm the story file ends in `.stories.tsx` — only that extension is picked up.
 
 For other issues, see the [FAQ](../developer-guide/faq.md) or open a Discussion.
+
+---
+
+## Using the Package in an App
+
+Install the package:
+
+```bash
+npm install @version14/ui
+```
+
+Import the generated component CSS once in your app root:
+
+```ts
+import "@version14/ui/styles.css";
+```
+
+Import bundled fonts when you want the default V14 typography assets:
+
+```ts
+import "@version14/ui/fonts.css";
+```
+
+If the app also uses PandaCSS, add the preset for the V14 tokens and semantic colors:
+
+```ts
+import { defineConfig } from "@pandacss/dev";
+import { v14Preset } from "@version14/ui/preset";
+
+export default defineConfig({
+  presets: [v14Preset],
+});
+```
+
+The preset provides tokens. The `styles.css` import provides the component class rules generated from this package's source.

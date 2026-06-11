@@ -1,6 +1,6 @@
 {
   "name": "@version14/ui",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "V14 internal UI component library built on Ark UI and PandaCSS",
   "author": "V14",
   "license": "MIT",
@@ -29,6 +29,10 @@
         "default": "./dist/preset.cjs"
       }
     },
+    "./styles.css": {
+      "style": "./dist/styles.css",
+      "default": "./dist/styles.css"
+    },
     "./fonts.css": {
       "style": "./dist/fonts.css",
       "default": "./dist/fonts.css"
@@ -37,7 +41,10 @@
   "files": [
     "dist"
   ],
-  "sideEffects": ["./dist/fonts.css"],
+  "style": "./dist/styles.css",
+  "sideEffects": [
+    "./dist/*.css"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/version14/ui"
@@ -49,7 +56,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "panda codegen && tsup && cp src/fonts.css dist/ && cp -r src/assets dist/",
+    "build": "panda codegen && tsup && panda cssgen './src/**/*.{ts,tsx}' --outfile dist/styles.css --minify && cp src/fonts.css dist/ && cp -r src/assets dist/",
     "dev": "tsup --watch",
     "prepare": "panda codegen && simple-git-hooks",
     "prepublishOnly": "pnpm build && pnpm lint && pnpm check-types && pnpm test",

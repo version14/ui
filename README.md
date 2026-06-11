@@ -27,7 +27,7 @@ V14's internal React component library — accessible, headless primitives from 
 - Fully typed — strict TypeScript throughout
 - Accessible — ARIA compliance via Ark UI primitives
 - Themeable — all visual variants are PandaCSS `sva()` recipes
-- Tree-shakeable — dual ESM/CJS build, `sideEffects: false`
+- Tree-shakeable JS — dual ESM/CJS build with explicit CSS entrypoints
 
 ---
 
@@ -41,6 +41,37 @@ V14's internal React component library — accessible, headless primitives from 
 | pnpm | >= 10 | `npm i -g pnpm` |
 
 ### Installation
+
+For app usage:
+
+```bash
+npm install @version14/ui
+```
+
+Import the generated component styles once in your app root:
+
+```ts
+import "@version14/ui/styles.css";
+```
+
+If you want the bundled Geist and Nyght font faces, import the font stylesheet too:
+
+```ts
+import "@version14/ui/fonts.css";
+```
+
+For PandaCSS token integration, add the preset to your app's Panda config:
+
+```ts
+import { defineConfig } from "@pandacss/dev";
+import { v14Preset } from "@version14/ui/preset";
+
+export default defineConfig({
+  presets: [v14Preset],
+});
+```
+
+For local component development:
 
 ```bash
 git clone https://github.com/v14/ui.git
